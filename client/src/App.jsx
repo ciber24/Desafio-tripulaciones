@@ -1,15 +1,18 @@
-import React from 'react'
-import Header from './components/Header'
-import Main from './components/Main'
-import Footer from './components/Footer'
-import './styles/pages/_App.scss'
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
+import './styles/pages/_App.scss';
 
 function App() {
 
   return (
     <>
-      <Header />
-      <Main />
+      <BrowserRouter>
+        <Header />
+        <Main />
+      </BrowserRouter>
       <Footer />
     </>
   )

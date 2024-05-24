@@ -25,13 +25,13 @@ const Servicios = () => {
           <input type="checkbox" />
           <label htmlFor="">Estudiar en España: Grados y Postgrados</label>
         </div>
-      </div>
-
-      <div>
         <div>
           <input type="checkbox" />
           <label htmlFor="">Estudiar en el extranjero: Grados y Postgrados</label>
         </div>
+      </div>
+
+      <div>
         <div>
           <input type="checkbox" />
           <label htmlFor="">Preparación de exámenes</label>

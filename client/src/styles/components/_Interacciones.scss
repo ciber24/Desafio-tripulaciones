@@ -1,0 +1,43 @@
+.interacciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+
+    &>article {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+
+        &>div {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    &>form {
+        display: flex;
+        flex-direction: column;
+        padding: 8px;
+        width: 60%;
+        border: 2px solid white;
+        border-radius: 8px;
+
+        &>div {
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 5px;
+
+            &>div {
+                &>label {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        &>textarea {
+            height: 60px;
+        }
+    }
+}
