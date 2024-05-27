@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import UserImage from '../../../assets/user_azul.png';
+
+
 
 const Login = ({ logged, role }) => {
   const [email, setEmail] = useState("");
@@ -74,13 +77,23 @@ const Login = ({ logged, role }) => {
   };
 
   if (logged.logged) {
-    return <button onClick={handleLogout}>Logout</button>;
+    return <section className="logout-bar">
+      <div className="agent">
+        <img src={UserImage}></img>
+        <h3>Andrea Smithson</h3>
+        <p>Agente</p>
+      </div>
+      <button onClick={handleLogout}>Logout</button>
+    </section>
+
   }
 
   return (
     <div className="login-form">
-      <input type="email" placeholder="email" onChange={handleEmail} />
-      <input type="password" placeholder="password" onChange={handlePassword} />
+      <h4>Login</h4>
+      <input className="input-general" type="email" placeholder="email" onChange={handleEmail} />
+      <input className="input-general" type="password" placeholder="password" onChange={handlePassword} />
+      <a href="#">¿Has olvidado tu contraseña?</a>
       <button onClick={handleLogin}>Login</button>
     </div>
   );

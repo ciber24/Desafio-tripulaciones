@@ -2,8 +2,71 @@
 @import '../utils/variables.scss';
 
 .login-form {
+    box-sizing: border-box;
     @include centered-column-layout;
-    justify-content: flex-start;
-    @include form(purple);
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 4%;
+
+    &>h4 {
+        color: $strong-blue;
+
+    }
+
+
+    &>input {
+
+        height: 32px;
+        border: 1 solid $purple;
+        width: 360px;
+
+    }
+
+    &>button {
+        @include button-normal-purple;
+        width: 368px;
+        height: 38px;
+
+    }
+}
+
+.logout-bar {
+    @include centered-row-layout;
+
+    height: 68px;
+    background-color: white;
+    padding: 20px 40px;
+    align-items: center;
+    justify-content: space-between;
+
+    &>button {
+        @include button-normal-white;
+        font-weight: 800;
+
+    }
+
+}
+
+.agent {
+
+    @include centered-row-layout;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+
+
+    &>img {
+
+        height: 48px;
+        width: 48px;
+        border-radius: 50%;
+
+    }
+
+    &>h2 {
+        padding-left: 60px;
+    }
+
 
 }

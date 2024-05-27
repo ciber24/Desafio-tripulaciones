@@ -12,6 +12,7 @@ const Nav = () => {
 
   return <nav className="nav">
     {/* <Link to="/">Home </Link> */}
+    
     <Link to="/employee">Employee </Link>
     <Link to="/admin">Admin </Link>
     

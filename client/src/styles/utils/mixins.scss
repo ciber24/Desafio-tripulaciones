@@ -41,12 +41,35 @@
     }
 }
 
-@mixin button-normal-purple {
+@mixin button-normal-white {
   
     height: 32;
     color:$purple;
+    gap:20px;
+    border:0px;
+    background-color: white;
+    border-radius:6px; 
+   
+
+}
+@mixin button-normal-purple {
+  
+    height: 32;
+    color:white;
     padding:8px 20px;
     border:0px;
-    background-color: white;;
+    background-color: $purple;
+    border-radius:6px; 
+
+}
+
+@mixin button-normal-blue {
+  
+    height: 32;
+    color:white;
+    padding:8px 20px;
+    border:0px;
+    background-color: $strong-blue;
+    border-radius:6px; 
 
 }

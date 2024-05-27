@@ -3,6 +3,5 @@ services:
     type: web
     env: node
     plan: free
-    buildCommand: npm install && npm install --prefix client && npm install --prefix server
+    buildCommand: npm install && npm install --prefix client && npm install --prefix server && npm run build --prefix client
     startCommand: npm start
-

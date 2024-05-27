@@ -6,7 +6,6 @@ require('dotenv').config();
 require('./config/db_pgsql');
 
 const express = require("express");
-const jwt = require("jsonwebtoken");
 const path = require('path');
 const cors = require('cors');
 const helmet = require("helmet");
@@ -22,6 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Rutas
 const usersRouter = require('./routes/users'); // Rutas de usuarios
+const infoRouter = require('./routes/info.routes');
 const resourcesRouter = require('./routes/resources'); // Rutas de recursos protegidos
 
 // Middleware para servir la aplicación cliente en React
@@ -36,9 +36,9 @@ app.use(cors({
 /******RUTAS ******/
 
 // Ruta de inicio
-app.get("/", (req, res) => {
-  res.status(200).send("Estas en el Home");
-});
+/* app.get("/", (req, res) => {
+  res.status(200).send("Estás en Home");
+}); */
 
 // Todas las peticiones que no sean a la API, redirigirán a la página principal
 app.get("*", (req, res) => { 
@@ -47,6 +47,7 @@ app.get("*", (req, res) => {
 
 // API
 app.use('/api/test', (req, res) => { res.status(200).json({ status: "connected" }) });
+app.use('/api/info', infoRouter); // Rutas de usuarios
 app.use('/api/users', usersRouter); // Rutas de usuarios
 app.use('/api/resources', resourcesRouter); // Rutas de recursos protegidos
 
