@@ -1,0 +1,8 @@
+services:
+  - name: fullstack-app
+    type: web
+    env: node
+    plan: free
+    buildCommand: npm install && npm install --prefix client && npm install --prefix server
+    startCommand: npm start
+

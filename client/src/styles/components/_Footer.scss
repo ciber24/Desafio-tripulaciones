@@ -1,0 +1,15 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+.footer{
+    @include centered-column-layout;
+    text-align: center;
+    color:white;
+    border:1px solid black;
+    height: 14vh;
+    vertical-align: bottom;
+    position:fixed;
+    width:100vw; 
+    background-color:$purple;
+
+}

@@ -2,37 +2,66 @@
  * @author Desafío de tripulaciones Grupo 2 
  */
 
-//require("dotenv").config();
+require('dotenv').config();
+require('./config/db_pgsql');
+
 const express = require("express");
+const jwt = require("jsonwebtoken");
+const path = require('path');
+const cors = require('cors');
+const helmet = require("helmet");
+
+
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 5000;
+
+app.use(helmet());
+
+app.use(express.json()); // Para parsear el body de las peticiones
+app.use(express.urlencoded({ extended: true }));
 
 // Rutas
-const userRoutes = require("./routes/routes")
+const usersRouter = require('./routes/users'); // Rutas de usuarios
+const resourcesRouter = require('./routes/resources'); // Rutas de recursos protegidos
 
-//Middlewares
-app.use(express.json()); // Para parsear el body de las peticiones
-const error404 = require("./middlewares/error404");
-const morgan = require("./middlewares/morgan");
+// Middleware para servir la aplicación cliente en React
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.use(morgan(':method :host :status :param[id] - :response-time ms :body'));
-
+// Middleware para permitir solicitudes CORS
+app.use(cors({
+    origin: 'http://localhost:3000', // Asegúrate de que esta sea la URL de tu frontend
+    credentials: true
+}));
 
 /******RUTAS ******/
 
-// http://localhost:3000/
+// Ruta de inicio
 app.get("/", (req, res) => {
   res.status(200).send("Estas en el Home");
 });
 
-//API
-app.use('/api/user', userRoutes);
+// Todas las peticiones que no sean a la API, redirigirán a la página principal
+app.get("*", (req, res) => { 
+  res.sendFile(path.join(__dirname, '../client/dist/index.html')) 
+});
 
+// API
+app.use('/api/test', (req, res) => { res.status(200).json({ status: "connected" }) });
+app.use('/api/users', usersRouter); // Rutas de usuarios
+app.use('/api/resources', resourcesRouter); // Rutas de recursos protegidos
 
-app.use(error404);
-app.use("*", error404); // Middleware que gestiona el error 404
+// Manejo de errores 404
+app.use((req, res, next) => {
+    res.status(404).send("404 - Not Found");
+});
 
-// http://localhost:3000
+// Middleware de error global
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('500 - Internal Server Error');
+});
+
+// Iniciar servidor
 app.listen(port, () => {
-  console.log(`Example app listening on  http://localhost:${port}`);
+  console.log(`Example app listening on http://localhost:${port}`);
 });

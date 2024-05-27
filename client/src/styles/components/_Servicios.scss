@@ -1,14 +1,19 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
 .servicios {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include centered-column-layout;
     padding-bottom: 20px;
 
     &>article {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 5px;
-        width: 60%;
+        padding: 40px;
+        width: 80%;
     }
+   
+}
+.boton-servicios{
+    border:8px; 
 }

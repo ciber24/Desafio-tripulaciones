@@ -1,8 +1,12 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+
 .nav {
     &>ul {
         &>li {
             list-style: none;
-            color: black;
+            color: white;
         }
     }
 }

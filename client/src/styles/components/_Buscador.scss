@@ -1,0 +1,24 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+.buscador {
+  @include centered-row-layout;
+  justify-content: right;
+  align-items: center;
+  background-color:&light-gray;
+  align-items: right;
+  height: 12%;
+  color:white;
+  
+  
+
+
+  &>form {
+    @include form ($purple);
+    }
+
+
+}
+
+
+

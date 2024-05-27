@@ -9,4 +9,13 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './tests/setup',
   },
-}) //Para hacer todos los imports de Vitest global y evitar hacer importaciones manuales
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
+})

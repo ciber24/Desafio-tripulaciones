@@ -1,3 +1,6 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
 .interacciones {
     display: flex;
     flex-direction: column;
@@ -8,7 +11,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 90%;
+       
 
         &>div {
             display: flex;
@@ -16,11 +19,10 @@
         }
     }
 
-    &>form {
-        display: flex;
-        flex-direction: column;
+    &>form  {
+        @include form ($purple);
+        
         padding: 8px;
-        width: 60%;
         border: 2px solid white;
         border-radius: 8px;
 

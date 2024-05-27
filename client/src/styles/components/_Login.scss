@@ -1,6 +1,9 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
 .login-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
+    @include centered-column-layout;
+    justify-content: flex-start;
+    @include form(purple);
+
 }

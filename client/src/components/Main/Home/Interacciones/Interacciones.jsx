@@ -10,10 +10,10 @@ const Interacciones = () => {
       </div>
     </article>
 
-    <form action="">
+    <form className="form-interacciones" action="">
       <div>
         <div>
-          <label htmlFor="">Motivo: </label>
+          <label>Motivo: </label>
           <select name="" id="">
             <option value="Seguimiento">Seguimiento</option>
             <option value="Ofertas">Ofertas</option>
@@ -21,11 +21,11 @@ const Interacciones = () => {
           </select>
         </div>
         <div>
-          <label htmlFor="">Fecha: </label>
+          <label>Fecha: </label>
           <input type="date" />
         </div>
       </div>
-      <label htmlFor="">Observaciones: </label>
+      <label>Observaciones: </label>
       <textarea name="Observaciones" id=""></textarea>
     </form>
   </section>;

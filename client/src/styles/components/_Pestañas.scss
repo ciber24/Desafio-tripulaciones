@@ -1,14 +1,30 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+.cabecera_estudiante {
+    @include centered-row-layout;
+    justify-content: space-between;
+    background-color:$light-purple;
+
+
+}
 .pestañas {
-    display: flex;
+    @include centered-row-layout;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-end;
     height: 60px;
-    width: 100vw;
-    padding-left: 16px;
+      
+    
 
     &>button {
-        height: 40px;
-        margin: 0 1px;
-        border-bottom-left-radius: 8px;
-    }
+        @include button-normal-purple;
+        
+    }   background-color:$light-purple;
+
+}
+
+.nombre_estudiante {
+    @include centered-row-layout;
+    justify-content: flex-start;
+    text-align: left;
 }

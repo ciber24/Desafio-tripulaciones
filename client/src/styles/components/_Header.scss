@@ -1,13 +1,38 @@
-header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height:12vh;
-    width:100vw;
-    background-color: white;
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
 
-    &>img {
-        width: 30%;
-        height: 30%;
+
+header {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 16vh;
+    width: 100vw;
+    min-height: 8vh;
+    padding: 0px 40px;
+    color: white;
+    background-color: $purple;
+
+    &>div {
+        @include centered-row-layout;
+        align-items: center;
+
+
+        &>h2 {
+            font-family: "Nothing You Could Do", cursive;
+            font-weight: 300;
+            font-style: normal;
+            text-align: left;
+
+        }
+
+        &>img {
+
+            height: 80px;
+        }
     }
+
+
+
 }

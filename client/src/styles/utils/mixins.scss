@@ -1,12 +1,52 @@
+
+
+
+
+@mixin centered-row-layout {
+    //reutilizacion de codigo de estilos
+    display: flex;
+    flex-direction: row;
+    padding:0px;
+    margin:0px;
+  
+}
+
 @mixin centered-column-layout {
     //reutilizacion de codigo de estilos
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding:0px;
+    margin:0px;
 }
 
-@mixin form ($color) {
-    -webkit-box-shadow: 10px 10px 5px 0px $color;
-    -moz-box-shadow: 10px 10px 5px 0px $color;
-    box-shadow: 10px 10px 5px 0px $color;
+@mixin form ($purple) {
+    //-webkit-box-shadow: 10px 10px 5px 0px $purple;
+    //-moz-box-shadow: 10px 10px 5px 0px $purple;
+    //box-shadow: 10px 10px 5px 0px $purple;
+    margin:auto 60px;
+    &>input  {
+        height: 32px;
+        width: 380px; 
+    }
+    &>button {
+        height: 32;
+        background-color:$purple;
+        color:white;
+        padding:8px 20px;
+        border:0px;
+
+    }
+    &>label {
+        color:black;
+    }
+}
+
+@mixin button-normal-purple {
+  
+    height: 32;
+    color:$purple;
+    padding:8px 20px;
+    border:0px;
+    background-color: white;;
+
 }

@@ -7,50 +7,50 @@ const Servicios = () => {
       <div>
         <div>
           <input type="checkbox" name="Orientación vocacional" />
-          <label htmlFor="">Orientación vocacional</label>
+          <label>Orientación vocacional</label>
         </div>
         <div>
           <input type="checkbox" />
-          <label htmlFor="">Año y trimestre escolar en el extranjero</label>
+          <label>Año y trimestre escolar en el extranjero</label>
         </div>
         <div>
           <input type="checkbox" />
-          <label htmlFor="">Selección de colegios en España</label>
+          <label>Selección de colegios en España</label>
         </div>
         <div>
           <input type="checkbox" />
-          <label htmlFor="">Selección de colegios en España</label>
+          <label>Selección de colegios en España</label>
         </div>
         <div>
           <input type="checkbox" />
-          <label htmlFor="">Estudiar en España: Grados y Postgrados</label>
+          <label>Estudiar en España: Grados y Postgrados</label>
         </div>
         <div>
           <input type="checkbox" />
-          <label htmlFor="">Estudiar en el extranjero: Grados y Postgrados</label>
+          <label>Estudiar en el extranjero: Grados y Postgrados</label>
         </div>
       </div>
 
       <div>
         <div>
           <input type="checkbox" />
-          <label htmlFor="">Preparación de exámenes</label>
+          <label>Preparación de exámenes</label>
         </div>
         <div>
           <input type="checkbox" />
-          <label htmlFor="">Campamentos</label>
+          <label>Campamentos</label>
         </div>
         <div>
           <input type="checkbox" />
-          <label htmlFor="">Cursos preuniversitarios</label>
+          <label>Cursos preuniversitarios</label>
         </div>
         <div>
           <input type="checkbox" />
-          <label htmlFor="">Voluntariados</label>
+          <label>Voluntariados</label>
         </div>
         <div>
           <input type="checkbox" />
-          <label htmlFor="">Desarrollo personal</label>
+          <label>Desarrollo personal</label>
         </div>
       </div>
     </article>

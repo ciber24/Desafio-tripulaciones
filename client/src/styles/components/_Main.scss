@@ -1,7 +1,15 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
 .main{
-    min-height:76vh;
+    box-sizing: border-box;
+    @include centered-column-layout;
+
+    height: 70vh;
     width:100vw;
-    display: flex;
-    flex-direction: column;  
-    align-items: center;  
+  
+  
+   
+
+    
 }
