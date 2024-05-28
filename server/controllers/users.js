@@ -4,9 +4,8 @@ const { createToken } = require('../config/jsonWebToken');
 
 const signup = async (req, res) => {
     try {
-        const { email, password, role } = req.body;
-        console.log("****", role);
-        const newUser = await usersModels.signup(email, password, role)
+        const { nombre, apellidos, perfil, email, password, role, status } = req.body;
+        const newUser = await usersModels.signup(req.body);
         res.status(201).json({ msg: "Signed Up" }); // Creando usuario nuevo, el data que nos devuelve la peticion será este JSON
     } catch (error) {
         res.status(400).json({ msg: error.message });
@@ -17,11 +16,10 @@ const login = async (req, res) => {
     try {
         const { email, password } = req.body;
         const user = await usersModels.login(email, password); // comprueba si existe el usuario
-        console.log("controlador: ", user);
         
         if (user.length > 0) {
             const token = createToken({ email: user[0].email, role: user[0].role }); //se crea Token con email y rol del usuario
-            console.log("controlador2: ", token);
+            console.log("Token: ", token);
             
             res.status(200)
                 .set('Authorization', `Bearer ${token}`) // damos la respuesta con encabezado
@@ -56,17 +54,29 @@ const logout = async (req, res) => {
 const getAllUsers = async (req, res) => {
     try {
         const users = await usersModels.getAllUsers();
-        console.log(users);
+        console.log("Controlador", users);
         res.status(200).json(users);
     } catch (error) {
         res.status(400).json({ msg: error.message })
     }
 }
 
+const revokeaccess = async (req, res) => {
+    try {
+        const id = req.query.id;
+        console.log("controlador", id);
+        const updateUser = await usersModels.revokeaccess(id);
+        res.status(201).json({ msg: "Unauthorized" }); // Creando usuario nuevo, el data que nos devuelve la peticion será este JSON
+    } catch (error) {
+        res.status(400).json({ msg: error.message });
+    }
+};
+
 const users = {
     signup,
     login,
     logout,
+    revokeaccess,
     getAllUsers
 };
 

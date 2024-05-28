@@ -7,20 +7,17 @@ const usuariosQueries = {
         role varchar(45));`,
 
     /* -- Insertar datos en tabla usuarios */
-    insertarUsuario: `INSERT INTO agentes (email, password, role)
-        VALUES ($1,$2,$3);`,
+    insertarUsuario: `INSERT INTO agentes (nombre, apellidos, perfil, email, password, role)
+        VALUES ($1,$2,$3,$4,$5,$6);`,
 
     /* -- Editar datos en tabla usuarios */
-    actualizarUsuario: `UPDATE agentes
-        SET password=$1,
-            role=$3
-        WHERE email=$2;`,
-
+    deshabilitarUsuario: `UPDATE agentes SET status='blocked' WHERE id_agente=$1;`,
+        
     /* -- para buscar al usuario y poder buscarlo por foreing */
     loginUsuario: `SELECT role FROM agentes WHERE email=$1 and password=$2;`,
 
     /* -- Mostrar todos los datos de la tabla usuarios */
-    mostrarUsuarios: `SELECT * FROM agentes;`
+    mostrarUsuarios: `SELECT * FROM agentes order by id_agente desc;`
 }
 
 module.exports = usuariosQueries;

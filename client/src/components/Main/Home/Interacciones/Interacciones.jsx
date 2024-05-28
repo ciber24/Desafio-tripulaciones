@@ -1,6 +1,6 @@
 import React from "react";
 
-const Interacciones = () => {
+const Interacciones = ({ clienteBuscado }) => {
   return <section className="interacciones">
     <article>
       <h1>Historial de Interacciones</h1>
