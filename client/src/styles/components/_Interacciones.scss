@@ -19,12 +19,14 @@
         }
     }
 
-    &>form  {
+    .interaccionesCard  {
         @include form ($purple);
-        
+        display: flex;
+        flex-direction: column;
         padding: 8px;
         border: 2px solid white;
         border-radius: 8px;
+        margin-bottom: 8px;
 
         &>div {
             display: flex;

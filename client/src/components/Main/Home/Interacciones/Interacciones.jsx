@@ -10,11 +10,11 @@ const Interacciones = ({ clienteBuscado }) => {
       </div>
     </article>
 
-    <form className="form-interacciones" action="">
+    {clienteBuscado? clienteBuscado.map((elem, i) => <article key={i} className="interaccionesCard">
       <div>
         <div>
           <label>Motivo: </label>
-          <select name="" id="">
+          <select name="" defaultValue={elem.motivo}>
             <option value="Seguimiento">Seguimiento</option>
             <option value="Ofertas">Ofertas</option>
             <option value="Incidencias">Incidencias</option>
@@ -22,12 +22,12 @@ const Interacciones = ({ clienteBuscado }) => {
         </div>
         <div>
           <label>Fecha: </label>
-          <input type="date" />
+          <input type="text" defaultValue={new Date(elem.fecha).toLocaleDateString()}/>
         </div>
       </div>
       <label>Observaciones: </label>
-      <textarea name="Observaciones" id=""></textarea>
-    </form>
+      <textarea name="Observaciones" >{elem.observaciones}</textarea>
+    </article>) : <></>}
   </section>;
 };
 
