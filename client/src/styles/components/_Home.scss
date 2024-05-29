@@ -1,0 +1,13 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+.home {
+min-height: 800px;
+width:100vw;
+background-color:$transparent-blue;
+}
+.cabecera_estudiante {
+
+text-align: right;
+
+}

@@ -1,0 +1,35 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+.buscador {
+  @include centered-row-layout;
+  justify-content:right;
+  align-items: center;
+  height: 12vh;
+  color:white;
+  background-color:$transparent-blue;
+  padding: 0% 6%;
+    &>input  {
+        height: 36px;
+        width: 300px; 
+        border: 0.5px solid $strong-blue;
+        border-radius: 4px 0px 0px 4px;
+        font-size:medium;
+        padding-left:10px;
+
+
+    }
+    &>button {
+        height: 36px;
+        background-color:$strong-blue;
+        color:white;
+        padding:8px 20px;
+        border:0.5px solid $strong-blue;
+        border-radius:0px 4px 4px 0px;
+        width: 80px; 
+    }
+    &>label {
+        color:black;
+    }
+
+}

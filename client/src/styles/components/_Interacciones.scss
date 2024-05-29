@@ -1,0 +1,48 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+.interacciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+    background-color: white;
+
+    &>article {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       
+
+        &>div {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    .interaccionesCard  {
+        @include form ($purple);
+        display: flex;
+        flex-direction: column;
+        padding: 8px;
+        border: 2px solid white;
+        border-radius: 8px;
+        margin-bottom: 8px;
+
+        &>div {
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 5px;
+
+            &>div {
+                &>label {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        &>textarea {
+            height: 60px;
+        }
+    }
+}

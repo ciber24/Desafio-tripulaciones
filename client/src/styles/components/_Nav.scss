@@ -1,0 +1,13 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+
+.nav {
+    visibility: hidden;
+    &>ul {
+        &>li {
+            list-style: none;
+            color: white;
+        }
+    }
+}

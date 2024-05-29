@@ -1,0 +1,84 @@
+
+
+
+
+@mixin centered-row-layout {
+    //reutilizacion de codigo de estilos
+    display: flex;
+    flex-direction: row;
+    padding:0px;
+    margin:0px;
+  
+}
+
+@mixin centered-column-layout {
+    //reutilizacion de codigo de estilos
+    display: flex;
+    flex-direction: column;
+    padding:0px;
+    margin:0px;
+}
+
+@mixin form ($purple) {
+    //-webkit-box-shadow: 10px 10px 5px 0px $purple;
+    //-moz-box-shadow: 10px 10px 5px 0px $purple;
+    //box-shadow: 10px 10px 5px 0px $purple;
+    margin:auto 60px;
+    &>input  {
+        height: 32px;
+        width: 380px; 
+    }
+    &>button {
+        height: 32;
+        background-color:$purple;
+        color:white;
+        padding:8px 20px;
+        border:0px;
+
+    }
+    &>label {
+        color:black;
+    }
+}
+
+@mixin button-normal-white {
+  
+    height: 32;
+    color:$purple;
+    gap:20px;
+    border:0px;
+    background-color: white;
+    border-radius:6px; 
+   
+
+}
+@mixin button-normal-purple {
+  
+    height: 32;
+    color:white;
+    padding:8px 20px;
+    border:0px;
+    background-color: $purple;
+    border-radius:6px; 
+
+}
+
+@mixin button-normal-blue {
+  
+    height: 32;
+    color:white;
+    padding:8px 20px;
+    border:0px;
+    background-color: $strong-blue;
+    border-radius:6px; 
+
+}
+
+@mixin content-information {
+    display:flex;
+    justify-content: center;
+    
+    padding:20px; 
+    width:80%; 
+
+}

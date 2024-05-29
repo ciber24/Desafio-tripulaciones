@@ -1,0 +1,11 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+.datospersonales{
+    
+    @include form ($strong-blue);
+    padding:20%;
+    width:100%; 
+    background-color: $strong-blue;
+    
+} 
