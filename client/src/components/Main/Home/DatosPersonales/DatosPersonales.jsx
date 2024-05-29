@@ -1,7 +1,7 @@
 import React from "react";
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
-import logo from '../../../../assets/Be_logo.png';
+import logo from '../../../../assets/BE_logo.png';
 import qr from '../../../../assets/QR_Code_Desafio.png';
 
 const DatosPersonales = ({ clienteBuscado }) => {

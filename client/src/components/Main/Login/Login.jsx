@@ -7,7 +7,6 @@ import UserImage from '../../../assets/user_azul.png';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
-
 const Login = ({ logged, role }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -64,6 +63,7 @@ const Login = ({ logged, role }) => {
       }
     } catch (error) {
       console.log(error.message);
+      alert("Login Failed");
     }
   };
 
@@ -98,6 +98,7 @@ const Login = ({ logged, role }) => {
       <input className="input-general" type="email" placeholder="email" onChange={handleEmail} />
       <input className="input-general" type="password" placeholder="password" onChange={handlePassword} />
       <a href="#">¿Has olvidado tu contraseña?</a>
+      <p>(*) Para darse de alta, póngase en contacto con el Administrador del Sistema</p>
      {/*  <Stack spacing={1} direction="row">
       
       <Button className="login_button" onClick={handleLogin} variant="contained">Login</Button>

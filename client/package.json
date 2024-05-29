@@ -23,6 +23,7 @@
     "jspdf": "^2.5.1",
     "jspdf-autotable": "^3.8.2",
     "react": "^18.2.0",
+    "react-big-calendar": "^1.12.2",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
     "sass": "^1.77.2",

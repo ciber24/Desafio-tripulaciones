@@ -57,10 +57,6 @@ const AdminDashboard = () => {
   const handleGetUsers = async () => { //muestra todos los usuarios
     try {
       const request = await axios.get('api/users/all');
-      /*  const request = await axios({
-         method: 'get',
-         url: '/api/users/all'
-       }); */
       console.log("AdminBoard", request);
       setUsers(request.data);
       console.log("AdminBoard2", request.data);
@@ -84,13 +80,10 @@ const AdminDashboard = () => {
     }
   };
 
-  const revokeAccess = async () => {
+  const revokeAccess = async (e) => {
     try {
-      console.log("AdminRevoke", users[0].id_agente);
-      const id = users[0].id_agente;
       //para evitar poner la ruta completa HTTP:\\....se añade en el package Json la linea "PROXY" y esta ruta va al index.js principal
-      const request = await axios.put('api/users/revokeaccess', { id });
-      console.log("AdminRevoke2", email);
+      const request = await axios.put(`api/users/revokeaccess?email=${e}`);
       setMessage(request.data.msg);
       alert("Empleado Desautorizado");
     } catch (error) {
@@ -107,7 +100,7 @@ const AdminDashboard = () => {
         <li>Email: {user.email}</li>
         <li>Rol: {user.role}</li>
         <li>Status: {user.status}</li>
-        <button onClick={revokeAccess}>Revoke Access</button><br /><br /><br />
+        <button onClick={()=>revokeAccess(user.email)}>Revoke Access</button><br /><br /><br />
       </ul>
     })
   }
