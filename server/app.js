@@ -14,7 +14,25 @@ const helmet = require("helmet");
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(helmet());
+//app.use(helmet());
+
+app.use(  // Si render no funciona con streamlit descomentar y probar
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        frameSrc: ["'self'", "https://desafiotripulacionesds.streamlit.app"], // Permitir frames desde accounts.google.com y chatybe.streamlit.app        imgSrc: ["'self'", "data:", "https://www.gstatic.com"],
+        connectSrc: [
+          "'self'",
+          "http://localhost:5000",
+          "http://localhost:3000",
+          "https://desafio-de-tripulaciones-grupo-2.onrender.com",
+        ],
+        fontSrc: ["'self'", "https://fonts.gstatic.com"],
+      },
+    },
+  })
+); 
+
 
 app.use(express.json()); // Para parsear el body de las peticiones
 app.use(express.urlencoded({ extended: true }));
@@ -29,7 +47,22 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // Middleware para permitir solicitudes CORS
 app.use(cors());
-
+/* app.use(  // Si render no funciona con streamlit descomentar y probar
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        frameSrc: ["'self'", "https://desafiotripulacionesds.streamlit.app"], // Permitir frames desde accounts.google.com y chatybe.streamlit.app        imgSrc: ["'self'", "data:", "https://www.gstatic.com"],
+        connectSrc: [
+          "'self'",
+          "http://localhost:5000",
+          "http://localhost:3000",
+          "https://desafio-de-tripulaciones-grupo-2.onrender.com",
+        ],
+        fontSrc: ["'self'", "https://fonts.gstatic.com"],
+      },
+    },
+  })
+); */
 /******RUTAS ******/
 
 // API

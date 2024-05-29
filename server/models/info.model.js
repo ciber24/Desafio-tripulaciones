@@ -95,12 +95,60 @@ const getUsers = async () => {
   return result;
 };
 
+// Get Avisos todos nombres y nacimiento alumnos
+const getAvisos = async () => {
+  let client, result;
+  try {
+    client = await pool.connect();
+    const data = await client.query(queries.getAvisos);
+    result = data.rows;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  } finally {
+    if (client) {
+      client.release();
+    }
+  }
+  return result;
+};
+
+const updateServices = async (modifiedServices) => {
+  const { a, b, c, d, e, f, g, h, i, j, k } = modifiedServices;
+  let client, result;
+  try {
+    client = await pool.connect(); // Espera a abrir conexion
+    const data = await client.query(queries.updateServices, [
+      a, 
+      b, 
+      c, 
+      d, 
+      e, 
+      f, 
+      g, 
+      h, 
+      i, 
+      j, 
+      k
+    ]);
+    result = data.rowCount;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  } finally {
+    client.release();
+  }
+  return result;
+};
+
 const user = {
   getPersonalData,
   getServices,
   getInteractions,
   getContractedCampaigns,
   getUsers,
+  getAvisos,
+  updateServices
 };
 
 module.exports = user;

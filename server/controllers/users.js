@@ -63,9 +63,8 @@ const getAllUsers = async (req, res) => {
 
 const revokeaccess = async (req, res) => {
     try {
-        const id = req.query.id;
-        console.log("controlador", id);
-        const updateUser = await usersModels.revokeaccess(id);
+        const email = req.query.email;
+        const updateUser = await usersModels.revokeaccess(email);
         res.status(201).json({ msg: "Unauthorized" }); // Creando usuario nuevo, el data que nos devuelve la peticion será este JSON
     } catch (error) {
         res.status(400).json({ msg: error.message });

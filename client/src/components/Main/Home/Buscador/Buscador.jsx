@@ -9,8 +9,8 @@ const Buscador = ({ setDNIbuscado }) => {
   };
 
   return <section className="buscador" id="buscador">
-      <label>Buscar alumno:  </label>
-      <input type="search" id="buscadoralumno" name="buscadoralumno" placeholder="DNI" ref={inputRef}/>
+      
+      <input type="search" id="buscadoralumno" name="buscadoralumno" placeholder="Búsqueda de alumno por DNI" ref={inputRef}/>
       <button onClick={() => buscarDNI()}>Buscar</button>
   </section>
 };

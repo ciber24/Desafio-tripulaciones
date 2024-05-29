@@ -14,12 +14,19 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.18",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "axios": "^1.7.2",
     "jsdom": "^22.1.0",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.8.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
-    "sass": "^1.77.2"
+    "sass": "^1.77.2",
+    "styled-components": "^6.1.11"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.5",

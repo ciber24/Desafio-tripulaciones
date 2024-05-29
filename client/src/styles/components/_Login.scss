@@ -8,40 +8,37 @@
     align-items: center;
     gap: 18px;
     margin-top: 4%;
+   
 
     &>h4 {
         color: $strong-blue;
-
     }
 
 
     &>input {
-
         height: 32px;
-        border: 1 solid $purple;
-        width: 360px;
-
-    }
-
-    &>button {
-        @include button-normal-purple;
-        width: 368px;
-        height: 38px;
-
-    }
+        border: 1 solid $strong-blue;
+        width: 360px;    }
 }
+
+.login_button  {
+    @include button-normal-blue;
+    width: 368px;
+    height: 38px;
+    border-radius: 6px; 
+   
+    }
 
 .logout-bar {
     @include centered-row-layout;
-
-    height: 68px;
-    background-color: white;
-    padding: 20px 40px;
+    height: 18vh;
+    width:100%;
     align-items: center;
     justify-content: space-between;
+    background-color:$strong-blue;
 
     &>button {
-        @include button-normal-white;
+        @include button-normal-blue;
         font-weight: 800;
 
     }
@@ -65,7 +62,7 @@
     }
 
     &>h2 {
-        padding-left: 60px;
+        padding-left: 48px;
     }
 
 

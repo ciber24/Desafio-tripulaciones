@@ -73,3 +73,12 @@
     border-radius:6px; 
 
 }
+
+@mixin content-information {
+    display:flex;
+    justify-content: center;
+    
+    padding:20px; 
+    width:80%; 
+
+}

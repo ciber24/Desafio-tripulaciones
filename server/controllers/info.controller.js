@@ -34,6 +34,16 @@ const getUsers = async (req, res) => {
     res.status(200).json(users);
 }
 
+const getAvisos = async (req, res) => {
+    const users = await user.getAvisos();
+    res.status(200).json(users);
+}
+
+const updateServices = async (req, res) => {
+    const modifiedServices = req.body; 
+    const response = await user.updateServices(modifiedServices);
+    res.status(200).json("items_updated");
+}
 
 module.exports = {
     getPersonalData,
@@ -41,4 +51,6 @@ module.exports = {
     getInteractions,
     getContractedCampaigns,
     getUsers,
+    getAvisos,
+    updateServices
 }

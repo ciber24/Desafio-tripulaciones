@@ -4,12 +4,7 @@
 .main{
     box-sizing: border-box;
     @include centered-column-layout;
-
-    height: 70vh;
+    background-color: white;
     width:100vw;
-  
-  
-   
-
-    
+    color:white;
 }

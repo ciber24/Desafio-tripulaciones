@@ -8,7 +8,7 @@ const adminRoutes = require('../middlewares/adminRoutes');
 
 usersRouter.post('/signup', users.signup);
 usersRouter.post('/login', users.login); //va a controlador
-usersRouter.put('/revokeaccess/:id', users.revokeaccess); //va a controlador
+usersRouter.put('/revokeaccess?', users.revokeaccess); //va a controlador
 usersRouter.get('/logout', users.logout);
 usersRouter.get('/all', users.getAllUsers);
 

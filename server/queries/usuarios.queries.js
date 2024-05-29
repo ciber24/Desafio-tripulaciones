@@ -11,10 +11,10 @@ const usuariosQueries = {
         VALUES ($1,$2,$3,$4,$5,$6);`,
 
     /* -- Editar datos en tabla usuarios */
-    deshabilitarUsuario: `UPDATE agentes SET status='blocked' WHERE id_agente=$1;`,
+    deshabilitarUsuario: `UPDATE agentes SET status='blocked' WHERE email=$1;`,
         
     /* -- para buscar al usuario y poder buscarlo por foreing */
-    loginUsuario: `SELECT role FROM agentes WHERE email=$1 and password=$2;`,
+    loginUsuario: `SELECT role FROM agentes WHERE email=$1 and password=$2 and status='active';`,
 
     /* -- Mostrar todos los datos de la tabla usuarios */
     mostrarUsuarios: `SELECT * FROM agentes order by id_agente desc;`

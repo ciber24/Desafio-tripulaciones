@@ -1,7 +1,21 @@
 import React from "react";
 import axios from "axios";
+import { ThemeProvider } from '@mui/material/styles';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import { useState } from "react";
+import theme from '../../../../theme';
+
+
 
 const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
+
+  const [value, setValue] = useState('Datos personales');
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
 
   function clickWindows(windows) {
     setWindowsEnUso(windows);
@@ -16,22 +30,24 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
     try {
       console.log(windows)
       const res = axios.get(url);
+
       console.log(res)
-      if(windows == "datosPersonales") {
+      if (windows == "datosPersonales") {
+
         res.then(response => setClienteBuscado(prev => {
-          return {...prev, datosPersonales: response.data}
+          return { ...prev, datosPersonales: response.data }
         }));
       } else if (windows == "servicios") {
         res.then(response => setClienteBuscado(prev => {
-          return {...prev, servicios: response.data}
+          return { ...prev, servicios: response.data }
         }));
       } else if (windows == "interacciones") {
         res.then(response => setClienteBuscado(prev => {
-          return {...prev, interacciones: response.data}
+          return { ...prev, interacciones: response.data }
         }));
       } else {
         res.then(response => setClienteBuscado(prev => {
-          return {...prev, contratos: response.data}
+          return { ...prev, contratos: response.data }
         }));
       }
     } catch {
@@ -39,18 +55,51 @@ const Windows = ({ setWindowsEnUso, DNIbuscado, setClienteBuscado }) => {
     }
   };
 
+
+
   return <>
     <section className="cabecera_estudiante">
-      <div className="nombre_estudiante">
-        <h3>Nombre del alumno</h3>
-      </div>
-      <nav className="windows">
-        <button onClick={() => clickWindows("datosPersonales")} className="boton-datos-personales">DATOS PERSONALES</button>
-        <button onClick={() => clickWindows("servicios")} className="boton-servicios">SERVICIOS</button>
-        <button onClick={() => clickWindows("interacciones")} className="boton-interacciones">INTERACCIONES</button>
-        <button onClick={() => clickWindows("contratos")} className="boton-campañas-contratadas">CONTRATOS</button>
-      </nav>
+      
+        <ThemeProvider theme={theme}>
+
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            textColor='secondary'
+            indicatorColor='secondary'
+            aria-label="secondary tabs example"
+          >
+            <Tab
+              value="Datos personales"
+              label="Datos personales"
+              wrapped
+              onClick={() => clickWindows("datosPersonales")}
+            />
+
+            <Tab
+              value="Servicios preferentes"
+              label="Servicios preferentes"
+              wrapped
+              onClick={() => clickWindows("servicios")}
+            />
+
+            <Tab
+              value="Interacciones"
+              label="Interacciones"
+              wrapped
+              onClick={() => clickWindows("interacciones")}
+            />
+            <Tab
+              value="Contratos"
+              label="Contratos"
+              wrapped
+              onClick={() => clickWindows("contratos")}
+            />
+          </Tabs>
+        </ThemeProvider>
+        
     </section>
+
   </>
 };
 

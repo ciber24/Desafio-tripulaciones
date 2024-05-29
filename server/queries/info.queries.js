@@ -2,6 +2,11 @@ const queries = {
     getUsers: `
     SELECT * FROM alumnos
     `,
+    getAvisos: `
+    SELECT
+	    CONCAT(alumnos.nombre, ' ', alumnos.apellidos) AS nombre_alumno, alumnos.fecha_nacimiento
+    FROM alumnos
+    `,
     getPersonalData: `
     SELECT
         "alumnos".id_alumno,
@@ -83,6 +88,11 @@ const queries = {
     INNER JOIN servicios_generales ON servicios_generales.id_serviciog = servicios_especificos.id_serviciog
     INNER JOIN alumnos ON facturas.id_alumno = alumnos.id_alumno	
     WHERE alumnos.dni = $1
-    `
+    `,
+    updateServices: `
+    UPDATE intereses
+    SET interesado = $2
+    WHERE id_interes = $1;
+    `,
 };
 module.exports = queries;

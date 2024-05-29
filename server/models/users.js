@@ -57,11 +57,11 @@ const getAllUsers = async () => {
     return result;
 };
 
-const revokeaccess = async (user) => {
+const revokeaccess = async (email) => {
   let client, result;
   try {
     client = await pool.connect();
-    const data = await client.query(queries.deshabilitarUsuario, [user]);
+    const data = await client.query(queries.deshabilitarUsuario, [email]);
     /* result = data.rowCount; */
     result = data.rows;
   } catch (err) {

@@ -3,23 +3,30 @@
 
 .buscador {
   @include centered-row-layout;
-  justify-content: right;
+  justify-content:right;
   align-items: center;
-  align-items: right;
-  height: 12%;
+  height: 12vh;
   color:white;
-  margin:auto 60px;
+  background-color:$transparent-blue;
+  padding: 0% 6%;
     &>input  {
-        height: 32px;
-        width: 380px; 
+        height: 36px;
+        width: 300px; 
+        border: 0.5px solid $strong-blue;
+        border-radius: 4px 0px 0px 4px;
+        font-size:medium;
+        padding-left:10px;
+
+
     }
     &>button {
-        height: 32;
-        background-color:$purple;
+        height: 36px;
+        background-color:$strong-blue;
         color:white;
         padding:8px 20px;
-        border:0px;
-
+        border:0.5px solid $strong-blue;
+        border-radius:0px 4px 4px 0px;
+        width: 80px; 
     }
     &>label {
         color:black;
